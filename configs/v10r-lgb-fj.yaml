@@ -1,0 +1,14 @@
+id: v10r-lgb-fj
+model: two_part
+offset: aobt_proxy
+blocks: [base, airline, seq, stand, schedrel, wx, geo, pxdev]
+extra_features: ["data/processed/latent_set_noarr_wx_avg3/{fold}.parquet", "data/processed/regime/{fold}.parquet"]
+params: {num_threads: 12}
+folds: [feb, jun]
+seeds: [20260926, 7, 11]
+yclip: 10800
+d24: zone
+clf_stake: true
+lirf_late: true
+rounds: 3000                 # regression rounds (EXP-042, with learning_rate 0.025)
+reg_params: {feature_fraction: 0.5, objective: huber, alpha: 900.0, learning_rate: 0.025}

@@ -1,0 +1,210 @@
+{
+ "config": {
+  "id": "v2-twopart-2s-seed2",
+  "model": "two_part",
+  "blocks": [
+   "base",
+   "seq",
+   "stand"
+  ],
+  "extra_features": [
+   "data/processed/two_stage/{fold}.parquet"
+  ],
+  "seed": 7,
+  "folds": [
+   "jan",
+   "jul"
+  ]
+ },
+ "protocol": "VAL-MONTH-V2",
+ "results": {
+  "jan": {
+   "n": 153706,
+   "all": 383.5121959312178,
+   "core": 231.29294169225815,
+   "clean": 209.7617916784169,
+   "n_clean": 152263,
+   "n_core": 153696,
+   "per_airport": {
+    "EDDF": {
+     "all": 182.12691897305888,
+     "clean": 177.78382025828833
+    },
+    "EDDM": {
+     "all": 182.1604594997072,
+     "clean": 178.90230452976883
+    },
+    "EGLL": {
+     "all": 249.5526986658072,
+     "clean": 234.8184222027213
+    },
+    "EHAM": {
+     "all": 220.7893622912898,
+     "clean": 190.3853905662378
+    },
+    "LEBL": {
+     "all": 147.2230781689758,
+     "clean": 146.60152847903797
+    },
+    "LEMD": {
+     "all": 163.10836693805823,
+     "clean": 162.704008741174
+    },
+    "LFPG": {
+     "all": 804.8585402048113,
+     "clean": 263.75668135966913
+    },
+    "LIRF": {
+     "all": 715.7741050719441,
+     "clean": 285.0317657122628
+    },
+    "LSZH": {
+     "all": 215.41766266079182,
+     "clean": 178.14637085152248
+    },
+    "LTFM": {
+     "all": 222.76744770985837,
+     "clean": 216.30278889269277
+    }
+   },
+   "seconds": 155.8,
+   "n_features": 60,
+   "top_gain": [
+    "nb_self_est",
+    "nb_overtaken",
+    "stand",
+    "mvt_vs_schedule_sec",
+    "nb_rw_prev5_mean",
+    "destination",
+    "nb_to_between",
+    "aircraft_type",
+    "aobt_proxy_sec",
+    "aobt_vs_eobt_sec",
+    "mvt_vs_eobt_sec",
+    "nb_pm600_mean",
+    "st_next_arr_after",
+    "mvt_vs_iobt_sec",
+    "operator"
+   ]
+  },
+  "jul": {
+   "n": 190713,
+   "all": 401.49514210191484,
+   "core": 313.3912452636645,
+   "clean": 245.73968253345606,
+   "n_clean": 186752,
+   "n_core": 190663,
+   "per_airport": {
+    "EDDF": {
+     "all": 195.74177080954968,
+     "clean": 191.20506226782294
+    },
+    "EDDM": {
+     "all": 188.8980153933649,
+     "clean": 168.87726948397258
+    },
+    "EGLL": {
+     "all": 307.2123131943406,
+     "clean": 262.1453772737385
+    },
+    "EHAM": {
+     "all": 176.44677924169045,
+     "clean": 163.53136885399582
+    },
+    "LEBL": {
+     "all": 272.20038634102457,
+     "clean": 263.97351929205354
+    },
+    "LEMD": {
+     "all": 194.57423234550325,
+     "clean": 191.2234635614592
+    },
+    "LFPG": {
+     "all": 270.9364985212505,
+     "clean": 246.27368187221418
+    },
+    "LIRF": {
+     "all": 1170.0731208743462,
+     "clean": 444.43841729128286
+    },
+    "LSZH": {
+     "all": 207.2361864406222,
+     "clean": 181.91977336126487
+    },
+    "LTFM": {
+     "all": 266.24202846960907,
+     "clean": 257.57248679456063
+    }
+   },
+   "seconds": 142.6,
+   "n_features": 60,
+   "top_gain": [
+    "nb_self_est",
+    "stand",
+    "nb_rw_prev5_mean",
+    "destination",
+    "mvt_vs_schedule_sec",
+    "nb_overtaken",
+    "aircraft_type",
+    "aobt_proxy_sec",
+    "st_next_arr_after",
+    "aobt_vs_eobt_sec",
+    "mvt_vs_eobt_sec",
+    "nb_pm600_mean",
+    "mvt_vs_iobt_sec",
+    "operator",
+    "runway"
+   ]
+  },
+  "primary_jan_jul": {
+   "n": 344419,
+   "all": 393.57131761907823,
+   "core": 279.7417960685218,
+   "clean": 230.2772229263266,
+   "n_clean": 339015,
+   "n_core": 344359,
+   "per_airport": {
+    "EDDF": {
+     "all": 190.132244597156,
+     "clean": 185.6440093381577
+    },
+    "EDDM": {
+     "all": 186.12577666718835,
+     "clean": 173.12936732891788
+    },
+    "EGLL": {
+     "all": 280.84669773650927,
+     "clean": 249.25562504063265
+    },
+    "EHAM": {
+     "all": 197.67183418028208,
+     "clean": 176.1929987178963
+    },
+    "LEBL": {
+     "all": 227.96716542968264,
+     "clean": 221.58890692562872
+    },
+    "LEMD": {
+     "all": 180.55297530942644,
+     "clean": 178.3727041615698
+    },
+    "LFPG": {
+     "all": 577.0304370046864,
+     "clean": 254.4051741824569
+    },
+    "LIRF": {
+     "all": 1001.7891171801502,
+     "clean": 383.92890361920166
+    },
+    "LSZH": {
+     "all": 210.8394645857083,
+     "clean": 180.27728996512252
+    },
+    "LTFM": {
+     "all": 247.23207925458573,
+     "clean": 239.4454197029411
+    }
+   }
+  }
+ }
+}

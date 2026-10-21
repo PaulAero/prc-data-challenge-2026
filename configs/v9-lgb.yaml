@@ -1,0 +1,12 @@
+id: v9-lgb
+model: two_part
+offset: aobt_proxy
+blocks: [base, airline, seq, stand, schedrel, wx, geo, pxdev]
+extra_features: ["data/processed/latent_set_noarr_wx_avg3/{fold}.parquet"]
+params: {num_threads: 12}
+folds: [jan, jul]
+seeds: [20260926, 7, 11]
+yclip: 10800      # EXP-036
+d24: zone         # EXP-039
+clf_stake: true   # EXP-038
+lirf_late: true   # EXP-041

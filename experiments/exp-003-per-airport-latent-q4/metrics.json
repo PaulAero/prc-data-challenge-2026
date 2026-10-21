@@ -1,0 +1,119 @@
+{
+  "protocol": "VAL-Q4-MASKED-V1 per-flight downstream test",
+  "variant": "independent per-airport predictive PLS, no airport identity input",
+  "train_flights": 1571364,
+  "validation_flights": 513683,
+  "baseline_rmse_sec": 291.1277160644531,
+  "latent_rmse_sec": 292.04510498046875,
+  "improvement_sec": -0.917388916015625,
+  "latent_fit_predict_seconds": 269.66714605799643,
+  "by_airport": [
+    {
+      "airport": "EDDF",
+      "flights": 56685,
+      "baseline_rmse_sec": 197.89166259765625,
+      "latent_rmse_sec": 196.2197723388672,
+      "improvement_sec": 1.6718902587890625
+    },
+    {
+      "airport": "EDDM",
+      "flights": 40066,
+      "baseline_rmse_sec": 216.3300323486328,
+      "latent_rmse_sec": 216.27764892578125,
+      "improvement_sec": 0.0523834228515625
+    },
+    {
+      "airport": "EGLL",
+      "flights": 60080,
+      "baseline_rmse_sec": 237.33580017089844,
+      "latent_rmse_sec": 236.58914184570312,
+      "improvement_sec": 0.7466583251953125
+    },
+    {
+      "airport": "EHAM",
+      "flights": 60474,
+      "baseline_rmse_sec": 187.15000915527344,
+      "latent_rmse_sec": 185.8152313232422,
+      "improvement_sec": 1.33477783203125
+    },
+    {
+      "airport": "LEBL",
+      "flights": 43467,
+      "baseline_rmse_sec": 204.95980834960938,
+      "latent_rmse_sec": 203.04776000976562,
+      "improvement_sec": 1.91204833984375
+    },
+    {
+      "airport": "LEMD",
+      "flights": 54296,
+      "baseline_rmse_sec": 186.57235717773438,
+      "latent_rmse_sec": 186.64418029785156,
+      "improvement_sec": -0.0718231201171875
+    },
+    {
+      "airport": "LFPG",
+      "flights": 59233,
+      "baseline_rmse_sec": 286.7832336425781,
+      "latent_rmse_sec": 284.857666015625,
+      "improvement_sec": 1.925567626953125
+    },
+    {
+      "airport": "LIRF",
+      "flights": 37538,
+      "baseline_rmse_sec": 729.999267578125,
+      "latent_rmse_sec": 738.7466430664062,
+      "improvement_sec": -8.74737548828125
+    },
+    {
+      "airport": "LSZH",
+      "flights": 32965,
+      "baseline_rmse_sec": 182.1305694580078,
+      "latent_rmse_sec": 185.55999755859375,
+      "improvement_sec": -3.4294281005859375
+    },
+    {
+      "airport": "LTFM",
+      "flights": 68879,
+      "baseline_rmse_sec": 248.5498046875,
+      "latent_rmse_sec": 246.7399139404297,
+      "improvement_sec": 1.8098907470703125
+    }
+  ],
+  "paired_day_block_bootstrap": {
+    "samples": 10000,
+    "seed": 20260925,
+    "median_improvement_sec": -0.8368321723435486,
+    "confidence_interval_95_sec": [
+      -3.640716900773782,
+      1.9699737163620277
+    ],
+    "probability_improvement": 0.278
+  },
+  "feature_importance": {
+    "mvt_vs_schedule_sec": 20.795357528524757,
+    "aobt_proxy_sec": 17.160991960886903,
+    "airport": 11.71222616946984,
+    "mvt_vs_eobt_sec": 11.237336231281509,
+    "runway": 7.31549219997467,
+    "stand": 4.166511750918797,
+    "aircraft_type": 4.065821584641701,
+    "destination": 3.540574980774844,
+    "aobt_vs_eobt_sec": 2.5344790566402193,
+    "month": 2.1377135228187063,
+    "mvt_vs_iobt_sec": 1.8955278774892923,
+    "latent_z_0": 1.7717659237424332,
+    "latent_z_1": 1.6940865733069561,
+    "operator": 1.4071187221647872,
+    "latent_z_3": 1.2694386906189696,
+    "tod_sin": 1.247498475270591,
+    "tod_cos": 0.9984857992394078,
+    "market_segment": 0.9854049906297347,
+    "latent_z_2": 0.9086575843260911,
+    "flight_rule": 0.8823539394182521,
+    "wake_category": 0.69382738696041,
+    "mvt_vs_lobt_sec": 0.6641127207961433,
+    "week_sin": 0.4091090823513239,
+    "flight_type": 0.3454687353435753,
+    "week_cos": 0.1606385124101472
+  }
+}

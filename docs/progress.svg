@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 524" width="1100" height="524" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .title { font-size: 16px; font-weight: 700; fill: #1f2937; }
+    .sub { font-size: 12.5px; fill: #6b7280; }
+    .ax { font-size: 12px; fill: #6b7280; }
+    .jump { font-size: 15px; font-weight: 700; fill: #1f2937; }
+    .note { font-size: 12.5px; fill: #374151; }
+    .muted { font-size: 12px; fill: #6b7280; }
+    .grid { stroke: #e5e7eb; stroke-width: 1; }
+  </style>
+  <rect width="1100" height="524" fill="#ffffff"/>
+
+  <text x="40" y="28" class="title">How the score came down: public leaderboard RMSE (s), January + July 2026</text>
+  <text x="40" y="46" class="sub">Each point is an upload that improved our best score (lower is better); uploads that did not improve are not shown.</text>
+
+  <!-- grid: y = 60 + (340 - v) * 3.4 -->
+  <g>
+    <line x1="80" y1="68" x2="1060" y2="68" class="grid"/><text x="70" y="72" class="ax" text-anchor="end">340</text>
+    <line x1="80" y1="136" x2="1060" y2="136" class="grid"/><text x="70" y="140" class="ax" text-anchor="end">320</text>
+    <line x1="80" y1="204" x2="1060" y2="204" class="grid"/><text x="70" y="208" class="ax" text-anchor="end">300</text>
+    <line x1="80" y1="272" x2="1060" y2="272" class="grid"/><text x="70" y="276" class="ax" text-anchor="end">280</text>
+    <line x1="80" y1="340" x2="1060" y2="340" class="grid"/><text x="70" y="344" class="ax" text-anchor="end">260</text>
+    <line x1="80" y1="408" x2="1060" y2="408" class="grid" stroke="#d1d5db"/><text x="70" y="412" class="ax" text-anchor="end">240</text>
+  </g>
+
+  <!-- series (y shifted by +8 so 340 sits at 68) -->
+  <polyline fill="none" stroke="#4f46e5" stroke-width="2" stroke-linejoin="round"
+    points="110,76.6 185,151.1 260,170.2 335,192.7 410,333.8 485,337.4 560,339.9 635,372.1 710,375.4 785,377.1 860,380.9 935,385.1 1010,393.1"/>
+  <g fill="#4f46e5" stroke="#ffffff" stroke-width="2">
+    <circle cx="110" cy="76.6" r="5"/><circle cx="185" cy="151.1" r="5"/><circle cx="260" cy="170.2" r="5"/>
+    <circle cx="335" cy="192.7" r="5"/><circle cx="410" cy="333.8" r="5"/><circle cx="485" cy="337.4" r="5"/>
+    <circle cx="560" cy="339.9" r="5"/><circle cx="635" cy="372.1" r="5"/><circle cx="710" cy="375.4" r="5"/>
+    <circle cx="785" cy="377.1" r="5"/><circle cx="860" cy="380.9" r="5"/><circle cx="935" cy="385.1" r="5"/>
+    <circle cx="1010" cy="393.1" r="5"/>
+  </g>
+
+  <!-- endpoints -->
+  <text x="122" y="72" class="note" font-weight="700">337.5</text>
+  <text x="1010" y="418" class="note" font-weight="700" text-anchor="middle">244.4</text>
+
+  <!-- jump annotations -->
+  <text x="215" y="96" class="jump">-34 s</text>
+  <text x="215" y="114" class="note">two-part model (schedule-filled</text>
+  <text x="215" y="130" class="note">records), weather, NM window</text>
+
+  <text x="430" y="196" class="jump">-41.5 s, the biggest jump</text>
+  <text x="430" y="214" class="note">record forensics: regression clipped at 3 h, fill classifier</text>
+  <text x="430" y="230" class="note">weighted by stake, 24-hour date error handled as a rule</text>
+
+  <text x="415" y="322" class="muted">-1.8 s: more latents, Turkish Airlines rule</text>
+
+  <text x="600" y="296" class="jump">-10.4 s</text>
+  <text x="664" y="296" class="note">open ADS-B surface tracks, stand map</text>
+
+  <text x="745" y="342" class="jump">-5.2 s</text>
+  <text x="801" y="342" class="note">Rome arrival regimes, calibration</text>
+  <text x="745" y="358" class="note">to EUROCONTROL's published aggregates</text>
+
+  <!-- x axis: uploads -->
+  <g class="ax" text-anchor="middle">
+    <text x="110" y="436">v1</text><text x="185" y="436">v3</text><text x="260" y="436">v4</text><text x="335" y="436">v5</text>
+    <text x="410" y="436">v6</text><text x="485" y="436">v9</text><text x="560" y="436">v11</text><text x="635" y="436">v12</text>
+    <text x="710" y="436">v13</text><text x="785" y="436">v14</text><text x="860" y="436">v15</text><text x="935" y="436">v16</text>
+    <text x="1010" y="436">v17</text>
+  </g>
+
+  <text x="40" y="466" class="note">Local checks on 2025 (ordinary flights, target &lt;= 3 h; not comparable with the board, which covers all flights of 2026): January + July holdouts 225.3 s,</text>
+  <text x="40" y="483" class="note">February + June holdouts never used for tuning 217.9 s.</text>
+  <text x="40" y="508" class="muted">Uploads named quick-quicksand_vN. Total: -93 s (MSE -48%). Most of the gain came from understanding how off-blocks are recorded, not from model capacity.</text>
+</svg>

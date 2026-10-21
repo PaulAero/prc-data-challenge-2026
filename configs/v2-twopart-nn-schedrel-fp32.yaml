@@ -1,0 +1,6 @@
+id: v2-twopart-nn-schedrel-fp32
+model: two_part
+blocks: [base, seq, stand, schedrel]
+extra_features: ["data/processed/latent_set_fp32/{fold}.parquet"]
+params: {num_threads: 8}
+folds: [jan, jul, q4]

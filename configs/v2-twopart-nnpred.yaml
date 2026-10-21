@@ -1,0 +1,7 @@
+id: v2-twopart-nnpred
+model: two_part
+blocks: [base, seq, stand]
+extra_features: ["data/processed/latent_set/{fold}.parquet"]
+drop: [nn_q10, nn_q50, nn_q90, nn_z0, nn_z1, nn_z2, nn_z3, nn_z4, nn_z5, nn_z6, nn_z7]
+folds: [jan, jul]
+params: {num_threads: 8}

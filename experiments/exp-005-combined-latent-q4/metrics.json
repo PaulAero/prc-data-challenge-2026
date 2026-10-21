@@ -1,0 +1,127 @@
+{
+  "protocol": "VAL-Q4-MASKED-V1 per-flight downstream test",
+  "variant": "combined shared raw and shared seasonal-residual predictive PLS",
+  "train_flights": 1571364,
+  "validation_flights": 513683,
+  "baseline_rmse_sec": 291.1277160644531,
+  "latent_rmse_sec": 288.6651306152344,
+  "improvement_sec": 2.46258544921875,
+  "latent_fit_predict_seconds": 279.88750408400665,
+  "by_airport": [
+    {
+      "airport": "EDDF",
+      "flights": 56685,
+      "baseline_rmse_sec": 197.89166259765625,
+      "latent_rmse_sec": 193.59841918945312,
+      "improvement_sec": 4.293243408203125
+    },
+    {
+      "airport": "EDDM",
+      "flights": 40066,
+      "baseline_rmse_sec": 216.3300323486328,
+      "latent_rmse_sec": 205.13897705078125,
+      "improvement_sec": 11.191055297851562
+    },
+    {
+      "airport": "EGLL",
+      "flights": 60080,
+      "baseline_rmse_sec": 237.33580017089844,
+      "latent_rmse_sec": 238.20639038085938,
+      "improvement_sec": -0.8705902099609375
+    },
+    {
+      "airport": "EHAM",
+      "flights": 60474,
+      "baseline_rmse_sec": 187.15000915527344,
+      "latent_rmse_sec": 176.13771057128906,
+      "improvement_sec": 11.012298583984375
+    },
+    {
+      "airport": "LEBL",
+      "flights": 43467,
+      "baseline_rmse_sec": 204.95980834960938,
+      "latent_rmse_sec": 201.81878662109375,
+      "improvement_sec": 3.141021728515625
+    },
+    {
+      "airport": "LEMD",
+      "flights": 54296,
+      "baseline_rmse_sec": 186.57235717773438,
+      "latent_rmse_sec": 186.65538024902344,
+      "improvement_sec": -0.0830230712890625
+    },
+    {
+      "airport": "LFPG",
+      "flights": 59233,
+      "baseline_rmse_sec": 286.7832336425781,
+      "latent_rmse_sec": 274.5335388183594,
+      "improvement_sec": 12.24969482421875
+    },
+    {
+      "airport": "LIRF",
+      "flights": 37538,
+      "baseline_rmse_sec": 729.999267578125,
+      "latent_rmse_sec": 738.5601196289062,
+      "improvement_sec": -8.56085205078125
+    },
+    {
+      "airport": "LSZH",
+      "flights": 32965,
+      "baseline_rmse_sec": 182.1305694580078,
+      "latent_rmse_sec": 176.36392211914062,
+      "improvement_sec": 5.7666473388671875
+    },
+    {
+      "airport": "LTFM",
+      "flights": 68879,
+      "baseline_rmse_sec": 248.5498046875,
+      "latent_rmse_sec": 243.3923797607422,
+      "improvement_sec": 5.1574249267578125
+    }
+  ],
+  "paired_day_block_bootstrap": {
+    "samples": 10000,
+    "seed": 20260925,
+    "median_improvement_sec": 2.5156353783510497,
+    "confidence_interval_95_sec": [
+      -2.8581577647389764,
+      7.325710769852979
+    ],
+    "probability_improvement": 0.8212
+  },
+  "feature_importance": {
+    "mvt_vs_schedule_sec": 20.241252854607932,
+    "aobt_proxy_sec": 14.866266534636624,
+    "raw_latent_z_1": 10.103172374929205,
+    "mvt_vs_eobt_sec": 10.03844181081256,
+    "airport": 7.388644609243013,
+    "runway": 5.193123478970733,
+    "aobt_vs_eobt_sec": 3.745553452027805,
+    "destination": 3.4606231094923365,
+    "stand": 2.836241006378555,
+    "aircraft_type": 2.109896954933861,
+    "mvt_vs_lobt_sec": 2.0185993568960754,
+    "flight_rule": 1.8234689935596367,
+    "raw_latent_z_0": 1.6777784632639194,
+    "raw_latent_z_5": 1.41656307433093,
+    "month": 1.2757678604619107,
+    "mvt_vs_iobt_sec": 1.2133704492122095,
+    "operator": 1.1393659645785532,
+    "tod_sin": 1.0992362314439394,
+    "residual_latent_z_5": 1.0723794740654926,
+    "tod_cos": 0.983585934861867,
+    "market_segment": 0.8561730021233124,
+    "raw_latent_z_2": 0.7480247240964313,
+    "residual_latent_z_2": 0.6599425699790452,
+    "residual_latent_z_0": 0.6103809163387058,
+    "wake_category": 0.503621056554761,
+    "residual_latent_z_3": 0.4825112714091493,
+    "raw_latent_z_3": 0.4629052447537781,
+    "residual_latent_z_1": 0.4516086353375798,
+    "raw_latent_z_4": 0.4183418284443417,
+    "residual_latent_z_4": 0.31715651339450707,
+    "week_sin": 0.29050627751408226,
+    "flight_type": 0.2754060399718209,
+    "week_cos": 0.2200899313755279
+  }
+}

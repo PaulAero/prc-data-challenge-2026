@@ -1,0 +1,22 @@
+data/raw/*
+data/processed/*
+data/submissions/*
+artefacts/*
+!**/.gitkeep
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.env
+mc-config/
+CLAUDE.local.md
+credentials*.json
+prompt.md
+brainstorm.md
+
+# per-run predictions are large and rebuildable; metrics.json is tracked
+experiments/**/*.parquet
+docs/explorer_notes.md
+data/external/*
+!data/external/.gitkeep
+logs/

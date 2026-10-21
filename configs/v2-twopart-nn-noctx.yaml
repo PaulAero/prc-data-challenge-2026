@@ -1,0 +1,6 @@
+id: v2-twopart-nn-noctx
+model: two_part
+blocks: [base, seq, stand]
+extra_features: ["data/processed/latent_set_noctx/{fold}.parquet"]
+params: {num_threads: 8}
+folds: [jan, jul]

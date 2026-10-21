@@ -1,0 +1,6 @@
+id: v2-twopart-nn-nostand
+model: two_part
+blocks: [base, seq, stand]
+extra_features: ["data/processed/latent_set_nostand/{fold}.parquet"]
+folds: [jan, jul]
+params: {num_threads: 8}

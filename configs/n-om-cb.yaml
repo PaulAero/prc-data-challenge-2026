@@ -1,0 +1,8 @@
+id: n-om-cb
+model: two_part
+offset: aobt_proxy
+blocks: [base, airline, seq, stand, schedrel, wx, geo, pxdev]
+extra_features: ["data/processed/latent_set_noarr_wx_avg3/{fold}.parquet"]
+params: {num_threads: 10}
+folds: [jan, jul]
+reg: catboost

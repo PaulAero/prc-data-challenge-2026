@@ -1,0 +1,10 @@
+id: w24r-lgb
+model: two_part
+offset: aobt_proxy
+blocks: [base, airline, seq, stand, schedrel, wx, geo, pxdev]
+extra_features: ["data/processed/latent_set_noarr_wx_avg3/{fold}.parquet"]
+params: {num_threads: 12}
+folds: [jan, jul, q4]
+seeds: [20260926, 7, 11]
+d24: true
+recnm: true

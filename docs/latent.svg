@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5b6472"/>
+    </marker>
+    <style>
+      .t { font-size: 15px; font-weight: 700; fill: #1f2937; }
+      .s { font-size: 12.5px; fill: #374151; }
+      .x { font-size: 11px; fill: #6b7280; }
+      .h { font-size: 12px; font-weight: 700; fill: #6b7280; letter-spacing: 0.06em; }
+      .ln { stroke: #5b6472; stroke-width: 1.6; fill: none; marker-end: url(#arr); }
+    </style>
+  </defs>
+  <rect width="1200" height="560" fill="#ffffff"/>
+
+  <text x="20" y="34" class="h">1. AIRPORT WINDOW</text>
+  <text x="330" y="34" class="h">2. TOKENS</text>
+  <text x="575" y="34" class="h">3. ENCODER</text>
+  <text x="845" y="34" class="h">4. PER DEPARTURE</text>
+
+  <!-- 1. window timeline -->
+  <rect x="20" y="50" width="285" height="250" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="32" y="74" class="t">One airport, 2 hours</text>
+  <rect x="35" y="110" width="255" height="70" fill="#e2e8f0"/>
+  <rect x="131" y="110" width="63" height="70" fill="#c7d2fe"/>
+  <text x="138" y="104" class="x">central 30 min</text>
+  <text x="40" y="196" class="x">45 min context</text>
+  <text x="208" y="196" class="x">45 min context</text>
+  <!-- departures (filled) and arrivals (hollow) -->
+  <g fill="#4f46e5">
+    <circle cx="52" cy="128" r="5"/><circle cx="88" cy="160" r="5"/><circle cx="142" cy="128" r="5"/>
+    <circle cx="160" cy="150" r="5"/><circle cx="182" cy="128" r="5"/><circle cx="225" cy="160" r="5"/>
+    <circle cx="262" cy="128" r="5"/>
+  </g>
+  <g fill="#ffffff" stroke="#4f46e5" stroke-width="1.8">
+    <circle cx="70" cy="145" r="5"/><circle cx="118" cy="128" r="5"/><circle cx="150" cy="168" r="5"/>
+    <circle cx="205" cy="145" r="5"/><circle cx="245" cy="168" r="5"/><circle cx="280" cy="150" r="5"/>
+  </g>
+  <circle cx="45" cy="225" r="5" fill="#4f46e5"/><text x="56" y="229" class="s">departure (off-block hidden)</text>
+  <circle cx="45" cy="246" r="5" fill="#ffffff" stroke="#4f46e5" stroke-width="1.8"/><text x="56" y="250" class="s">arrival (in some variants)</text>
+  <text x="32" y="280" class="x">Windows step by 30 min: each departure</text>
+  <text x="32" y="294" class="x">is central in exactly one window.</text>
+
+  <!-- 2. tokens -->
+  <rect x="330" y="50" width="220" height="250" rx="8" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="342" y="74" class="t">Token per movement</text>
+  <text x="342" y="98" class="s">categorical embeddings:</text>
+  <text x="342" y="115" class="s">  runway, stand, aircraft</text>
+  <text x="342" y="132" class="s">  type, operator, wake,</text>
+  <text x="342" y="149" class="s">  segment (+ airline)</text>
+  <text x="342" y="173" class="s">numeric inputs:</text>
+  <text x="342" y="190" class="s">  NM and schedule offsets,</text>
+  <text x="342" y="207" class="s">  runway and stand gaps,</text>
+  <text x="342" y="224" class="s">  traffic counts (+ weather)</text>
+  <text x="342" y="248" class="s">+ departure / arrival type</text>
+  <text x="342" y="275" class="x">Built only from a table where every</text>
+  <text x="342" y="289" class="x">departure's off-block is blanked.</text>
+
+  <!-- 3. encoder -->
+  <rect x="575" y="50" width="245" height="250" rx="8" fill="#fff7ed" stroke="#f59e0b"/>
+  <text x="587" y="74" class="t">Transformer, 4 layers</text>
+  <text x="587" y="96" class="s">128 dims, 8 heads; every token</text>
+  <text x="587" y="113" class="s">attends to every other token</text>
+  <rect x="590" y="128" width="215" height="112" rx="6" fill="#ffffff" stroke="#fdba74"/>
+  <text x="600" y="148" class="s" font-weight="700">learned attention biases</text>
+  <text x="600" y="168" class="s">time gap between the two</text>
+  <text x="600" y="185" class="s">  movements (bucketed)</text>
+  <text x="600" y="205" class="s">same runway</text>
+  <text x="600" y="225" class="s">same stand + stand time gap</text>
+  <text x="587" y="262" class="x">The stand bias lets "an arrival blocked in</text>
+  <text x="587" y="276" class="x">at my stand before I took off" reach the</text>
+  <text x="587" y="290" class="x">departure: a hard bound on its off-block.</text>
+
+  <!-- 4. per departure -->
+  <rect x="845" y="50" width="160" height="80" rx="8" fill="#fdf2f8" stroke="#ec4899"/>
+  <text x="857" y="74" class="t">Bottleneck z</text>
+  <text x="857" y="96" class="s">16 dims per</text>
+  <text x="857" y="113" class="s">departure token</text>
+
+  <rect x="845" y="150" width="160" height="110" rx="8" fill="#fdf2f8" stroke="#ec4899"/>
+  <text x="857" y="174" class="t">Training heads</text>
+  <text x="857" y="196" class="s">mean taxi time (Huber)</text>
+  <text x="857" y="213" class="s">quantiles q10/50/90</text>
+  <text x="857" y="230" class="s">P(record = schedule)</text>
+
+  <rect x="1030" y="50" width="150" height="210" rx="8" fill="#111827"/>
+  <text x="1042" y="74" class="t" style="fill:#ffffff">To the GBMs</text>
+  <text x="1042" y="98" class="s" style="fill:#e5e7eb">mean, quantiles,</text>
+  <text x="1042" y="115" class="s" style="fill:#e5e7eb">P(fill)</text>
+  <text x="1042" y="139" class="s" style="fill:#e5e7eb">+ z reduced to</text>
+  <text x="1042" y="156" class="s" style="fill:#e5e7eb">8 PCA components</text>
+  <text x="1042" y="180" class="s" style="fill:#e5e7eb">= features of the</text>
+  <text x="1042" y="197" class="s" style="fill:#e5e7eb">two-part LightGBM</text>
+  <text x="1042" y="214" class="s" style="fill:#e5e7eb">and CatBoost models</text>
+
+  <!-- arrows -->
+  <path class="ln" d="M305,175 L330,175"/>
+  <path class="ln" d="M550,175 L575,175"/>
+  <path class="ln" d="M820,90 L845,90"/>
+  <path class="ln" d="M925,130 L925,150"/>
+  <path class="ln" d="M1005,90 L1030,90"/>
+  <path class="ln" d="M1005,205 L1030,205"/>
+
+  <!-- training scheme -->
+  <text x="20" y="346" class="h">TRAINING SCHEME</text>
+  <rect x="20" y="358" width="1160" height="96" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="34" y="382" class="s">Out of fold: 2025 days are split into 3 groups; each model is trained on two groups and predicts the third, so every 2025 departure gets</text>
+  <text x="34" y="400" class="s">outputs from a model that never saw it. 2026 rows get the average of the 3 models. The tree models are therefore trained on honest network outputs.</text>
+  <text x="34" y="424" class="s">Variants: 4 versions (departures + weather; + airline token and Huber loss, two seed sets; + arrival tokens), each averaged over 3 seeds;</text>
+  <text x="34" y="442" class="s">each version feeds its own pair of tree models, and the 8 models are averaged (diversity across latents helped more than any single version).</text>
+
+  <text x="20" y="490" class="h">WHAT IT CAN AND CANNOT DO</text>
+  <text x="20" y="511" class="s">Alone, the best version reaches 207.9 s on ordinary January / July 2025 flights. An oracle study shows that knowing the other flights' true off-blocks would</text>
+  <text x="20" y="528" class="s">be worth a further 13 s, but the network cannot rebuild them from the records (0.4 s recovered): its limit is the information in the data, not the architecture.</text>
+</svg>

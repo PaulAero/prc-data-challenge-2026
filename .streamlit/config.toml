@@ -1,0 +1,13 @@
+# Local-only data explorer: no telemetry, bound to loopback.
+[browser]
+gatherUsageStats = false
+serverAddress = "127.0.0.1"
+
+[server]
+address = "127.0.0.1"
+port = 8501
+headless = true
+runOnSave = false
+
+[client]
+toolbarMode = "minimal"

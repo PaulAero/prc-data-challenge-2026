@@ -1,0 +1,6 @@
+id: v2-twopart-2s-noself
+model: two_part
+blocks: [base, seq, stand]
+extra_features: ["data/processed/two_stage/{fold}.parquet"]
+drop: [nb_self_est]
+folds: [jan, jul]

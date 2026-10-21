@@ -1,0 +1,8 @@
+id: v2-lgbbag3-clip7200-geo-al
+model: two_part
+offset: aobt_proxy
+blocks: [base, airline, seq, stand, schedrel, wx, geo]
+extra_features: ["data/processed/latent_set_noarr_wx_clip7200_avg3/{fold}.parquet"]
+params: {num_threads: 8}
+folds: [jan, jul, feb]
+seeds: [20260926, 7, 11]

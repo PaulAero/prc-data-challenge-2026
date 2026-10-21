@@ -1,0 +1,6 @@
+id: v2-twopart-2s-selfonly
+model: two_part
+blocks: [base, seq, stand]
+extra_features: ["data/processed/two_stage/{fold}.parquet"]
+drop: [nb_taxiing_at_to, nb_taxiing_at_ob, nb_to_between, nb_overtaken, nb_pm600_mean, nb_rw_prev5_mean, nb_rw_taxiing_at_to]
+folds: [jan, jul]

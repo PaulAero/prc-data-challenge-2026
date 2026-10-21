@@ -1,0 +1,5 @@
+id: v2-twopart-2s-arr
+model: two_part
+blocks: [base, seq, stand, arr]
+extra_features: ["data/processed/two_stage/{fold}_arr.parquet"]
+folds: [jan, jul, q4]

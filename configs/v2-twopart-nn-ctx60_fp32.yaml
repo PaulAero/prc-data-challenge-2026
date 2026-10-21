@@ -1,0 +1,7 @@
+id: v2-twopart-nn-ctx60_fp32
+model: two_part
+offset: aobt_proxy
+blocks: [base, seq, stand, schedrel, wx]
+extra_features: ["data/processed/latent_set_ctx60_fp32/{fold}.parquet"]
+params: {num_threads: 8}
+folds: [jan, jul]

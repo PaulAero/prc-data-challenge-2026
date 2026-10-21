@@ -1,0 +1,5 @@
+id: v2-feb-noarr-off
+model: two_part
+offset: aobt_proxy
+blocks: [base, seq, stand, schedrel]
+folds: [feb]

@@ -1,0 +1,4 @@
+id: v2-feb-noarr
+model: two_part
+blocks: [base, seq, stand, schedrel]
+folds: [feb]

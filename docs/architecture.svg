@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5b6472"/>
+    </marker>
+    <style>
+      .t { font-size: 15px; font-weight: 700; fill: #1f2937; }
+      .s { font-size: 12.5px; fill: #374151; }
+      .h { font-size: 12px; font-weight: 700; fill: #6b7280; letter-spacing: 0.06em; }
+      .ln { stroke: #5b6472; stroke-width: 1.6; fill: none; marker-end: url(#arr); }
+      .dash { stroke-dasharray: 5,4; }
+    </style>
+  </defs>
+  <rect width="1200" height="600" fill="#ffffff"/>
+
+  <text x="20" y="34" class="h">INPUT</text>
+  <text x="195" y="34" class="h">FEATURES</text>
+  <text x="440" y="34" class="h">MODELS</text>
+  <text x="665" y="34" class="h">ADS-B</text>
+  <text x="850" y="34" class="h">CALIBRATION</text>
+  <text x="1035" y="34" class="h">OUTPUT</text>
+
+  <!-- input -->
+  <rect x="20" y="50" width="150" height="260" rx="8" fill="#eef2ff" stroke="#6366f1"/>
+  <text x="32" y="74" class="t">Challenge data</text>
+  <text x="32" y="98" class="s">2025 movements,</text>
+  <text x="32" y="115" class="s">with taxi times</text>
+  <text x="32" y="140" class="s">2026 movements,</text>
+  <text x="32" y="157" class="s">off-block hidden</text>
+  <text x="32" y="182" class="s">NM flight data,</text>
+  <text x="32" y="199" class="s">arrivals, stands,</text>
+  <text x="32" y="216" class="s">runways</text>
+
+  <!-- features -->
+  <rect x="195" y="50" width="220" height="80" rx="8" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="207" y="74" class="t">Flight features</text>
+  <text x="207" y="94" class="s">queues, stand occupancy,</text>
+  <text x="207" y="111" class="s">NM times, schedule, weather</text>
+
+  <rect x="195" y="145" width="220" height="75" rx="8" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="207" y="169" class="t">Arrival recording regime</text>
+  <text x="207" y="189" class="s">substitute in-block share</text>
+  <text x="207" y="206" class="s">per airline and month</text>
+
+  <rect x="195" y="235" width="220" height="75" rx="8" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="207" y="259" class="t">Transformer latent</text>
+  <text x="207" y="279" class="s">2-hour airport window,</text>
+  <text x="207" y="296" class="s">4 variants x 3 seeds</text>
+
+  <!-- models -->
+  <rect x="440" y="50" width="200" height="190" rx="8" fill="#fff7ed" stroke="#f59e0b"/>
+  <text x="452" y="74" class="t">Two-part model</text>
+  <text x="452" y="96" class="s">P(record = schedule)</text>
+  <text x="452" y="113" class="s">  x (take-off - schedule)</text>
+  <text x="452" y="130" class="s">+ (1 - P) x regression</text>
+  <text x="452" y="147" class="s">+ 24-hour date rule</text>
+  <text x="452" y="172" class="s">LightGBM + CatBoost</text>
+  <text x="452" y="189" class="s">on each latent:</text>
+  <text x="452" y="214" class="s" font-weight="700">8 models, averaged</text>
+
+  <rect x="440" y="255" width="200" height="55" rx="8" fill="#fff7ed" stroke="#f59e0b"/>
+  <text x="452" y="278" class="t">Airline regime rule</text>
+  <text x="452" y="297" class="s">Turkish Airlines, Rome</text>
+
+  <!-- ADS-B corrector -->
+  <rect x="665" y="50" width="160" height="150" rx="8" fill="#fdf2f8" stroke="#ec4899"/>
+  <text x="677" y="74" class="t">ADS-B corrector</text>
+  <text x="677" y="96" class="s">stand map from</text>
+  <text x="677" y="113" class="s">arrival tracks;</text>
+  <text x="677" y="130" class="s">ground-track</text>
+  <text x="677" y="147" class="s">features; corrects</text>
+  <text x="677" y="164" class="s">the residual of</text>
+  <text x="677" y="181" class="s">tracked flights</text>
+
+  <!-- calibration -->
+  <rect x="850" y="50" width="160" height="150" rx="8" fill="#fdf2f8" stroke="#ec4899"/>
+  <text x="862" y="74" class="t">Calibration</text>
+  <text x="862" y="96" class="s">daily shift to match</text>
+  <text x="862" y="113" class="s">published delay</text>
+  <text x="862" y="130" class="s">(fill-aware at Rome);</text>
+  <text x="862" y="147" class="s">monthly means</text>
+  <text x="862" y="164" class="s">where reliable</text>
+
+  <!-- output -->
+  <rect x="1035" y="97" width="145" height="56" rx="8" fill="#111827"/>
+  <text x="1047" y="121" class="t" style="fill:#ffffff">Submission</text>
+  <text x="1047" y="140" class="s" style="fill:#e5e7eb">taxi-out per flight</text>
+
+  <!-- external data row -->
+  <text x="195" y="362" class="h">OPEN EXTERNAL DATA</text>
+  <rect x="195" y="372" width="220" height="56" rx="8" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="207" y="395" class="t">Weather, geometry</text>
+  <text x="207" y="414" class="s">Open-Meteo (ERA5), OSM</text>
+
+  <rect x="665" y="372" width="160" height="56" rx="8" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="677" y="395" class="t">ADS-B tracks</text>
+  <text x="677" y="414" class="s">adsb.lol archives</text>
+
+  <rect x="850" y="372" width="160" height="56" rx="8" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="862" y="395" class="t">EUROCONTROL</text>
+  <text x="862" y="414" class="s">delay, taxi-out stats</text>
+
+  <!-- main flow -->
+  <path class="ln" d="M170,90 L195,90"/>
+  <path class="ln" d="M170,182 L195,182"/>
+  <path class="ln" d="M170,272 L195,272"/>
+  <path class="ln" d="M415,90 L440,90"/>
+  <path class="ln" d="M415,182 L440,182"/>
+  <path class="ln" d="M415,272 L440,228"/>
+  <path class="ln" d="M540,240 L540,255"/>
+  <path class="ln" d="M640,282 L652,282 L652,125 L665,125"/>
+  <path class="ln" d="M825,125 L850,125"/>
+  <path class="ln" d="M1010,125 L1035,125"/>
+  <!-- external inputs -->
+  <path class="ln" d="M305,372 L305,310"/>
+  <path class="ln dash" d="M745,372 L745,200"/>
+  <path class="ln dash" d="M930,372 L930,200"/>
+
+  <!-- footer -->
+  <text x="20" y="478" class="h">VALIDATION</text>
+  <text x="20" y="499" class="s">Whole-month holdouts of 2025 (January and July; February and June as an untouched generalisation check). Features are always built from a</text>
+  <text x="20" y="516" class="s">movement table with every departure's off-block blanked; paired day bootstrap for every comparison; no leaderboard probing.</text>
+  <text x="20" y="546" class="h">RESULTS</text>
+  <text x="20" y="567" class="s">Public board, Jan + Jul 2026: 337.5 s (first upload) -> 261.8 (record forensics) -> 250.6 (ADS-B) -> 244.4 s (regimes, calibration).</text>
+  <text x="20" y="584" class="s">February + June 2025 holdouts, ordinary flights: 220.9 s (ensemble) -> 217.9 s (with the daily calibration). Dashed: data used after the models.</text>
+</svg>

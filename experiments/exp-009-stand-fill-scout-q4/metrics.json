@@ -1,0 +1,6 @@
+{"protocol": "VAL-Q4-MASKED-V1 (scouting, fixed rounds, single seed 20260926)", "model": "LightGBM lr0.05 leaves255", "clean_definition": "NM-matched and target <= 7200 s",
+ "arms": {"B1_seq": {"all": 302.64, "clean": 221.37, "clean_excl_LIRF": 209.02, "LIRF_all": 809.4},
+          "B2_seq+stand": {"all": 299.97, "clean": 217.32, "clean_excl_LIRF": 204.67, "LIRF_all": 810.5},
+          "B3_seq+busy": {"all": 303.93, "clean": 221.33, "clean_excl_LIRF": 208.86, "LIRF_all": 817.0},
+          "B4_seq+stand+busy": {"all": 299.44, "clean": 216.76, "clean_excl_LIRF": 203.95, "LIRF_all": 810.8},
+          "C1_twopart_fill": {"all": 255.91, "clean": 215.16, "clean_excl_LIRF": 202.96, "LIRF_all": 570.8, "fill_auc": 0.854}}}

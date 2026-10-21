@@ -1,0 +1,13 @@
+id: v11-cb
+model: two_part
+offset: aobt_proxy
+blocks: [base, airline, seq, stand, schedrel, wx, geo, pxdev]
+extra_features: ["data/processed/latent_set_v2_avg3/{fold}.parquet"]
+params: {num_threads: 12}
+folds: [jan, jul]
+reg: catboost
+yclip: 10800
+d24: zone
+clf_stake: true
+lirf_late: true
+reg_params: {loss: "Huber:delta=900", rsm: 0.5}   # EXP-042

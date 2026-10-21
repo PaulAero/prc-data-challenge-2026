@@ -1,0 +1,124 @@
+{
+  "protocol": "mask all 2025-Q4 taxi-out targets",
+  "interval": "15m",
+  "context_length": 15360,
+  "horizon": 8832,
+  "airports": [
+    "EDDF",
+    "EDDM",
+    "EGLL",
+    "EHAM",
+    "LEBL",
+    "LEMD",
+    "LFPG",
+    "LIRF",
+    "LSZH",
+    "LTFM"
+  ],
+  "weighted_bucket_rmse_sec": {
+    "EDDF": 156.11219787597656,
+    "EDDM": 253.9584503173828,
+    "EGLL": 206.64036560058594,
+    "EHAM": 198.96925354003906,
+    "LEBL": 180.8361053466797,
+    "LEMD": 158.71153259277344,
+    "LFPG": 278.60565185546875,
+    "LIRF": 577.1459350585938,
+    "LSZH": 187.97015380859375,
+    "LTFM": 264.1795349121094,
+    "overall": 260.2342834472656
+  },
+  "inference_seconds": 5.986745733011048,
+  "checkpoint": "google/timesfm-3.0-pytorch",
+  "submission_eligible": false,
+  "submission_eligibility_reason": "TimesFM 3 checkpoint has a separate non-commercial licence",
+  "per_flight_rmse_sec": {
+    "flights": 513683,
+    "timesfm_rmse_sec": 454.5454372570766,
+    "weekly_profile_rmse_sec": 460.7276388516362,
+    "airport_mean_rmse_sec": 461.06303901098255,
+    "oracle_15m_bucket_rmse_sec": 372.67904588639345
+  },
+  "per_airport_per_flight": [
+    {
+      "airport": "EDDF",
+      "flights": 56685,
+      "timesfm_rmse_sec": 330.200580136021,
+      "weekly_profile_rmse_sec": 333.87824700401217,
+      "airport_mean_rmse_sec": 336.72048687433573,
+      "oracle_15m_bucket_rmse_sec": 290.9663279978291
+    },
+    {
+      "airport": "EDDM",
+      "flights": 40066,
+      "timesfm_rmse_sec": 356.6066505196984,
+      "weekly_profile_rmse_sec": 356.9649942951615,
+      "airport_mean_rmse_sec": 357.284567490469,
+      "oracle_15m_bucket_rmse_sec": 250.34660260991302
+    },
+    {
+      "airport": "EGLL",
+      "flights": 60080,
+      "timesfm_rmse_sec": 383.54352456851325,
+      "weekly_profile_rmse_sec": 404.3409725708457,
+      "airport_mean_rmse_sec": 405.6766417844593,
+      "oracle_15m_bucket_rmse_sec": 323.1182422805403
+    },
+    {
+      "airport": "EHAM",
+      "flights": 60474,
+      "timesfm_rmse_sec": 306.26634687827453,
+      "weekly_profile_rmse_sec": 306.0413257715753,
+      "airport_mean_rmse_sec": 305.1362248424736,
+      "oracle_15m_bucket_rmse_sec": 232.83107126871872
+    },
+    {
+      "airport": "LEBL",
+      "flights": 43467,
+      "timesfm_rmse_sec": 312.05531345224045,
+      "weekly_profile_rmse_sec": 326.38144978135284,
+      "airport_mean_rmse_sec": 326.97913998595305,
+      "oracle_15m_bucket_rmse_sec": 254.31638010536912
+    },
+    {
+      "airport": "LEMD",
+      "flights": 54296,
+      "timesfm_rmse_sec": 309.10658869927073,
+      "weekly_profile_rmse_sec": 308.54701723073936,
+      "airport_mean_rmse_sec": 307.6986974143005,
+      "oracle_15m_bucket_rmse_sec": 265.2499424900203
+    },
+    {
+      "airport": "LFPG",
+      "flights": 59233,
+      "timesfm_rmse_sec": 424.4403986834159,
+      "weekly_profile_rmse_sec": 431.7387090601271,
+      "airport_mean_rmse_sec": 433.3322342074242,
+      "oracle_15m_bucket_rmse_sec": 320.20077269188283
+    },
+    {
+      "airport": "LIRF",
+      "flights": 37538,
+      "timesfm_rmse_sec": 1122.6713543047308,
+      "weekly_profile_rmse_sec": 1131.5479252334173,
+      "airport_mean_rmse_sec": 1129.8930661273575,
+      "oracle_15m_bucket_rmse_sec": 962.9608261724893
+    },
+    {
+      "airport": "LSZH",
+      "flights": 32965,
+      "timesfm_rmse_sec": 302.7198351356942,
+      "weekly_profile_rmse_sec": 305.3685414530661,
+      "airport_mean_rmse_sec": 306.4793481948847,
+      "oracle_15m_bucket_rmse_sec": 237.28995591411962
+    },
+    {
+      "airport": "LTFM",
+      "flights": 68879,
+      "timesfm_rmse_sec": 379.5366611329132,
+      "weekly_profile_rmse_sec": 383.8851093251133,
+      "airport_mean_rmse_sec": 384.97865165806525,
+      "oracle_15m_bucket_rmse_sec": 272.5018300734735
+    }
+  ]
+}

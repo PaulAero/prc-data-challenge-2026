@@ -1,0 +1,8 @@
+id: d-pxdev
+model: two_part
+offset: aobt_proxy_dev
+blocks: [base, airline, seq, stand, schedrel, wx, geo, pxdev]
+extra_features: ["data/processed/latent_set_noarr_wx_avg3/{fold}.parquet"]
+params: {num_threads: 12}
+folds: [jan, jul, feb]
+seeds: [20260926, 7, 11]

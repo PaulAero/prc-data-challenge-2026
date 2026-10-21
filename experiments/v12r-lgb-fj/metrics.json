@@ -1,0 +1,185 @@
+{
+ "config": {
+  "id": "v12r-lgb-fj",
+  "model": "two_part",
+  "offset": "aobt_proxy",
+  "blocks": [
+   "base",
+   "airline",
+   "seq",
+   "stand",
+   "schedrel",
+   "wx",
+   "geo",
+   "pxdev"
+  ],
+  "extra_features": [
+   "data/processed/latent_set_v2b_avg3/{fold}.parquet",
+   "data/processed/regime/{fold}.parquet"
+  ],
+  "params": {
+   "num_threads": 12
+  },
+  "folds": [
+   "feb",
+   "jun"
+  ],
+  "seeds": [
+   20260926,
+   7,
+   11
+  ],
+  "yclip": 10800,
+  "d24": "zone",
+  "clf_stake": true,
+  "lirf_late": true,
+  "rounds": 3000,
+  "reg_params": {
+   "feature_fraction": 0.5,
+   "objective": "huber",
+   "alpha": 900.0,
+   "learning_rate": 0.025
+  }
+ },
+ "protocol": "VAL-MONTH-V2",
+ "results": {
+  "feb": {
+   "n": 143732,
+   "all": 232.11385757676376,
+   "core": 225.28540199199637,
+   "clean": 203.7811926893817,
+   "n_clean": 142617,
+   "n_core": 143720,
+   "per_airport": {
+    "EDDF": {
+     "all": 141.90112513818787,
+     "clean": 141.08030777884446
+    },
+    "EDDM": {
+     "all": 148.2251673969473,
+     "clean": 146.5933450163613
+    },
+    "EGLL": {
+     "all": 197.27155271736476,
+     "clean": 188.9838062778821
+    },
+    "EHAM": {
+     "all": 152.89277260321245,
+     "clean": 149.6271906302558
+    },
+    "LEBL": {
+     "all": 129.2182964993734,
+     "clean": 129.02627719525162
+    },
+    "LEMD": {
+     "all": 143.2919932244446,
+     "clean": 143.2170686845688
+    },
+    "LFPG": {
+     "all": 198.72837109089744,
+     "clean": 192.5475821590781
+    },
+    "LIRF": {
+     "all": 338.45366517550144,
+     "clean": 288.0807345497427
+    },
+    "LSZH": {
+     "all": 236.3514877849941,
+     "clean": 145.05666520025696
+    },
+    "LTFM": {
+     "all": 416.62079983746696,
+     "clean": 346.7566362358786
+    }
+   },
+   "seconds": 863.9,
+   "n_features": 105,
+   "top_gain": [
+    "aobt_proxy_sec",
+    "aobt_vs_eobt_sec",
+    "nn_pred",
+    "px_dev",
+    "nn_q50",
+    "nn_q90",
+    "stand",
+    "airport",
+    "nn_z0",
+    "destination",
+    "nn_q10",
+    "aobt_vs_sched_sec",
+    "runway",
+    "dep_between_aobt_to",
+    "airline"
+   ]
+  },
+  "jun": {
+   "n": 183142,
+   "all": 294.16994352550836,
+   "core": 220.08045930298658,
+   "clean": 203.3882121363257,
+   "n_clean": 180634,
+   "n_core": 183124,
+   "per_airport": {
+    "EDDF": {
+     "all": 155.80447362272227,
+     "clean": 154.64640943370856
+    },
+    "EDDM": {
+     "all": 157.43606698536072,
+     "clean": 156.6951713551762
+    },
+    "EGLL": {
+     "all": 224.75258440709698,
+     "clean": 217.3955883715749
+    },
+    "EHAM": {
+     "all": 148.40963033051335,
+     "clean": 145.7707182839202
+    },
+    "LEBL": {
+     "all": 176.55999114315694,
+     "clean": 175.09939452876372
+    },
+    "LEMD": {
+     "all": 169.1395787602373,
+     "clean": 168.65459339586388
+    },
+    "LFPG": {
+     "all": 239.46680771785788,
+     "clean": 220.61894830495967
+    },
+    "LIRF": {
+     "all": 826.1913327024452,
+     "clean": 374.81557406212113
+    },
+    "LSZH": {
+     "all": 166.4457848832537,
+     "clean": 163.15729634792524
+    },
+    "LTFM": {
+     "all": 194.54207791142986,
+     "clean": 193.54780824310456
+    }
+   },
+   "seconds": 858.8,
+   "n_features": 105,
+   "top_gain": [
+    "aobt_proxy_sec",
+    "aobt_vs_eobt_sec",
+    "nn_pred",
+    "nn_q50",
+    "nn_q90",
+    "px_dev",
+    "stand",
+    "airport",
+    "destination",
+    "nn_q10",
+    "nn_z0",
+    "aobt_vs_sched_sec",
+    "runway",
+    "dep_between_aobt_to",
+    "airline"
+   ]
+  }
+ }
+}
